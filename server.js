@@ -12,7 +12,8 @@ http.createServer(function(req, res) {
 console.log('Static server is running on port 8082');
 
 mockserver.start_mockserver({
-  serverPort: 8080
+  serverPort: process.env.PORT || 8080,
+  verbose: true
 });
 
 console.log('Mock server is running on port 8080');

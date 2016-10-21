@@ -1,0 +1,118 @@
+.body {
+  font-family: Sans-Serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+.loginform {
+  margin: auto;
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.loginform__legend {
+  border-bottom: 0;
+  margin-bottom: 34px;
+  text-align: center;
+  position: relative;
+  left: -19px;
+  font-size: 21px;
+}
+
+.loginform__legend .glyphicon {
+  font-size: 35px;
+  color: #F0AD4E;
+  margin-right: 6px;
+  top: 12px;
+} 
+
+.loginform__control {
+  font-size: 10px;
+  margin: auto;
+  margin-bottom: 18px;
+  width: 185px;
+  height: 34px;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 6px 0 0 6px;
+}
+
+.loginform__control.login-denied {
+  border: 2px solid #EAA09D;
+}
+
+.loginform__btn {
+  background-color: transparent;
+  background-image: none;
+  border-radius: 50px;
+  border-color: #E6E6E6;
+  width: 90px;
+  height: 34px;
+  text-align: center;
+  padding-right: 20px;
+  color: #418AC9;
+  font-size: 13px;
+  overflow: visible;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.loginform__btn__arrow {
+  font-family: Symbols;
+  position: relative;
+  top: -1px;
+}
+
+.loginform__btn:hover {
+  opacity: 0.75;
+  color: #418AC9;
+}
+
+.loginform__btn:focus,
+.loginform__btn:active {
+  outline: none;
+  box-shadow: none;
+  color: #418AC9;
+}
+
+.loginform__btn .glyphicon,
+.loginform__btn .glyphicon:hover,
+.loginform__btn .glyphicon:active {
+  color: #428BCA;
+  font-size: 27px;
+  line-height: 26px;
+  top: -3px;
+  left: 4px;
+}
+
+.loginform__btn .glyphicon {
+  animation-name: rotate;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logged_msg {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.logged_msg-text {
+  font-size: 22px;
+  vertical-align: top;
+}
+
+.logged_msg-text .glyphicon {
+  font-size: 36px;
+  color: #5CB85C;
+  margin-right: 8px;
+  margin-top: -3px;
+}

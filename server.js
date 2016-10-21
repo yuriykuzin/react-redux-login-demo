@@ -5,6 +5,9 @@ var mockserver = require('mockserver-grunt');
 var mockServer = require('mockserver-client');
 var mockServerClient = mockServer.mockServerClient;
 
+var portMockServer = process.env.PORT || 8080;
+var ipMockServer = process.env.IP || '0.0.0.0';
+
 http.createServer(function(req, res) {
   file.serve(req, res);
 }).listen(8082);
@@ -12,15 +15,16 @@ http.createServer(function(req, res) {
 console.log('Static server is running on port 8082');
 
 mockserver.start_mockserver({
-  serverPort: process.env.PORT || 8080,
+  serverPort: portMockServer,
   verbose: true
 });
 
-console.log('Mock server is running on port 8080');
+console.log('Mock server is running on port ' + portMockServer);
+console.log('IP address is ' + ipMockServer);
 
 setTimeout(function() {
 
-  mockServerClient("0.0.0.0", 8080).mockAnyResponse({
+  mockServerClient(ipMockServer, portMockServer).mockAnyResponse({
     'httpRequest': {
       'method': 'GET'
     },
@@ -34,7 +38,7 @@ setTimeout(function() {
     }
   });
   
-  mockServerClient("0.0.0.0", 8080).mockAnyResponse({
+  mockServerClient(ipMockServer, portMockServer).mockAnyResponse({
     "httpRequest": {
       "method": "POST",
       "path": "/login",
@@ -70,7 +74,7 @@ setTimeout(function() {
     }
   });   
 
-  mockServerClient("0.0.0.0", 8080).mockAnyResponse({
+  mockServerClient(ipMockServer, portMockServer).mockAnyResponse({
     "httpRequest": {
       "method": "POST",
       "path": "/login",
